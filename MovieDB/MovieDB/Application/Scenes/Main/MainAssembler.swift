@@ -14,7 +14,8 @@ protocol MainAssembler {
 
 extension MainAssembler where Self: DefaultAssembler {
     func resolve() -> MainViewController {
-        let moviesViewController: MoviesViewController = resolve()
+        let navigationController = UINavigationController()
+        let moviesViewController: MoviesViewController = resolve(navigationController: navigationController)
         moviesViewController.makeTabBarItem(title: "Movies", image: #imageLiteral(resourceName: "icon-movies"), tag: 0)
         
         let categoriesViewController: CategoriesViewController = resolve()

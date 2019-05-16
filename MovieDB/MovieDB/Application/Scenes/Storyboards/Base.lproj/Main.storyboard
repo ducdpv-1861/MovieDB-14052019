@@ -17,13 +17,35 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IJd-iK-dHb" customClass="LoadMoreCollectionView" customModule="MGLoadMore">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eax-bQ-fKU">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IJd-iK-dHb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0TP-Ou-hsS"/>
+                            <constraint firstItem="IJd-iK-dHb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="77E-kT-EBq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IJd-iK-dHb" secondAttribute="bottom" id="kpZ-5Q-8L0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IJd-iK-dHb" secondAttribute="trailing" id="mZX-2s-vmK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="IJd-iK-dHb" id="pV8-Eb-vC3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="139"/>
+            <point key="canvasLocation" x="2855.072463768116" y="138.61607142857142"/>
         </scene>
         <!--Categories View Controller-->
         <scene sceneID="svG-Kz-vdL">
@@ -38,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FN1-ZJ-rqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="874" y="139"/>
+            <point key="canvasLocation" x="3604.347826086957" y="138.61607142857142"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="9Xt-HA-NfI">
@@ -53,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9a-8N-v9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1584" y="139"/>
+            <point key="canvasLocation" x="4313.04347826087" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>

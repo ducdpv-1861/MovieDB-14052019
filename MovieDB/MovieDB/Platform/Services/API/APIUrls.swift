@@ -9,5 +9,7 @@
 extension API {
     enum Urls {
         static let baseURL = "https://api.themoviedb.org/3"
+        static let getUpcoming = "https://api.themoviedb.org/3/movie/upcoming"
+        static let mediaBackdropPath = "https://image.tmdb.org/t/p/w500"
     }
 }

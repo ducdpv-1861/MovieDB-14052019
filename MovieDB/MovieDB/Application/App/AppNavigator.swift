@@ -18,6 +18,7 @@ struct AppNavigator: AppNavigatorType {
     
     func toMain() {
         let mainViewController: MainViewController = assembler.resolve()
-        window.rootViewController = mainViewController
+        let navi =  UINavigationController.init(rootViewController: mainViewController)
+        window.rootViewController = navi
     }
 }
