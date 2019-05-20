@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IJd-iK-dHb" customClass="LoadMoreCollectionView" customModule="MGLoadMore">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="119" width="414" height="743"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eax-bQ-fKU">
                                     <size key="itemSize" width="50" height="50"/>
@@ -29,13 +29,26 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fE-Tv-UvX">
+                                <rect key="frame" x="339" y="74" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="O0N-fI-Tpr"/>
+                                    <constraint firstAttribute="height" constant="25" id="TM1-dn-lWE"/>
+                                </constraints>
+                                <state key="normal" image="Search"/>
+                                <connections>
+                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uco-Du-Bl4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="IJd-iK-dHb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="0TP-Ou-hsS"/>
                             <constraint firstItem="IJd-iK-dHb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="77E-kT-EBq"/>
+                            <constraint firstItem="6fE-Tv-UvX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="XKL-an-ugz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IJd-iK-dHb" secondAttribute="bottom" id="kpZ-5Q-8L0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6fE-Tv-UvX" secondAttribute="trailing" constant="50" id="ltS-dy-aUE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IJd-iK-dHb" secondAttribute="trailing" id="mZX-2s-vmK"/>
+                            <constraint firstItem="IJd-iK-dHb" firstAttribute="top" secondItem="6fE-Tv-UvX" secondAttribute="bottom" constant="20" id="q1U-3w-fJZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -45,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2855.072463768116" y="138.61607142857142"/>
+            <point key="canvasLocation" x="2853.6231884057975" y="138.61607142857142"/>
         </scene>
         <!--Categories View Controller-->
         <scene sceneID="svG-Kz-vdL">
@@ -141,4 +154,7 @@
             <point key="canvasLocation" x="4313.04347826087" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Search" width="25" height="25"/>
+    </resources>
 </document>

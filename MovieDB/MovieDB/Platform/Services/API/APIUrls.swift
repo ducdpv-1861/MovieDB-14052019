@@ -13,6 +13,6 @@ extension API {
         static let moviesListURL = baseURL + "/movie/popular"
         static let getUpcoming = baseURL + "/movie/upcoming"
         static let mediaBackdropPath = "https://image.tmdb.org/t/p/w500"
-
+        static let searchMovies = baseURL + "/search/movie"
     }
 }
