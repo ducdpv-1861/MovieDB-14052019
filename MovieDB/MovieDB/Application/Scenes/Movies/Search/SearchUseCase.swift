@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+protocol SearchUseCaseType {
+    func getSearchList(page: Int, searchText: String) ->  Observable<[Movie]>
+}
+
+struct SearchUseCase: SearchUseCaseType {
+    let repository: SearchRepositoryType
+    
+    func getSearchList(page: Int, searchText: String) -> Observable<[Movie]> {
+        return repository.getSearchList(page: page, searchText: searchText)
+    }
+}

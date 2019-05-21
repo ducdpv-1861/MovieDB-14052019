@@ -10,6 +10,7 @@ protocol Assembler: class,
     MainAssembler,
     MoviesAssembler,
     CategoriesAssembler,
+    SearchAssembler,
     FavoritesAssembler,
     RepositoriesAssembler,
     AppAssembler {

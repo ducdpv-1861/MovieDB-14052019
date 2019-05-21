@@ -18,6 +18,7 @@ extension MoviesViewModel: ViewModelType {
         let reloadTrigger: Driver<Void>
         let loadMoreTrigger: Driver<Void>
         let selectRepoTrigger: Driver<IndexPath>
+        let toSearchTrigger: Driver<Void>
     }
     
     struct Output {
@@ -29,6 +30,7 @@ extension MoviesViewModel: ViewModelType {
         let repoList: Driver<[Movie]>
         let selectedRepo: Driver<Void>
         let isEmptyData: Driver<Bool>
+        let toSearch: Driver<Void>
     }
     
     func transform(_ input: Input) -> Output {
@@ -58,6 +60,10 @@ extension MoviesViewModel: ViewModelType {
             })
             .mapToVoid()
         
+        let toSearch = input.toSearchTrigger
+            .do(onNext: { self.navigator.toSearchs()
+            })
+        
         let isEmptyData = checkIfDataIsEmpty(fetchItemsTrigger: fetchItems,
                                              loadTrigger: Driver.merge(loading, refreshing),
                                              items: repoList)
@@ -70,7 +76,8 @@ extension MoviesViewModel: ViewModelType {
             fetchItems: fetchItems,
             repoList: repoList,
             selectedRepo: selectedRepo,
-            isEmptyData: isEmptyData
+            isEmptyData: isEmptyData,
+            toSearch: toSearch
         )
     }
 }

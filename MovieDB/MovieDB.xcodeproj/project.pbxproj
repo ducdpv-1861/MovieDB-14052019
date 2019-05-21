@@ -28,6 +28,10 @@
 		44870E15228EB22400CF5A70 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44870E14228EB22400CF5A70 /* SearchUseCase.swift */; };
 		44870E17228EB23E00CF5A70 /* SearchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44870E16228EB23E00CF5A70 /* SearchNavigator.swift */; };
 		684543FFB7CEB3E7C94D59DF /* Pods_MovieDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E95921B81FBE3D5FEF92C39E /* Pods_MovieDB.framework */; };
+		7D94023C22927E42004B546F /* SearchMovies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D94023B22927E42004B546F /* SearchMovies.storyboard */; };
+		7D94023E22928BB6004B546F /* SearchAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94023D22928BB6004B546F /* SearchAssembler.swift */; };
+		7D940242229296BD004B546F /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D940240229296BD004B546F /* SearchTableViewCell.swift */; };
+		7D940243229296BD004B546F /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D940241229296BD004B546F /* SearchTableViewCell.xib */; };
 		AE7B1719228D0E6D00DB6571 /* API+Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B1718228D0E6D00DB6571 /* API+Movie.swift */; };
 		AE7B171B228D13F400DB6571 /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B171A228D13F400DB6571 /* MovieRepository.swift */; };
 		AE7B171F228D381800DB6571 /* DataSourceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B171E228D381800DB6571 /* DataSourceSection.swift */; };
@@ -113,6 +117,10 @@
 		44870E14228EB22400CF5A70 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
 		44870E16228EB23E00CF5A70 /* SearchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigator.swift; sourceTree = "<group>"; };
 		451583171B428351B576611A /* Pods-MovieDBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDBTests.debug.xcconfig"; path = "Target Support Files/Pods-MovieDBTests/Pods-MovieDBTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D94023B22927E42004B546F /* SearchMovies.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchMovies.storyboard; sourceTree = "<group>"; };
+		7D94023D22928BB6004B546F /* SearchAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAssembler.swift; sourceTree = "<group>"; };
+		7D940240229296BD004B546F /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		7D940241229296BD004B546F /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		9653E01BE04AAC3F79580FB9 /* Pods-MovieDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDB.debug.xcconfig"; path = "Target Support Files/Pods-MovieDB/Pods-MovieDB.debug.xcconfig"; sourceTree = "<group>"; };
 		AE7B1718228D0E6D00DB6571 /* API+Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Movie.swift"; sourceTree = "<group>"; };
 		AE7B171A228D13F400DB6571 /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
@@ -236,12 +244,23 @@
 		44870E0B228E685C00CF5A70 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				7D94023F22929690004B546F /* Cell */,
 				44870E10228EB1F900CF5A70 /* SearchViewController.swift */,
 				44870E12228EB20C00CF5A70 /* SearchViewModel.swift */,
 				44870E14228EB22400CF5A70 /* SearchUseCase.swift */,
 				44870E16228EB23E00CF5A70 /* SearchNavigator.swift */,
+				7D94023D22928BB6004B546F /* SearchAssembler.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		7D94023F22929690004B546F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7D940240229296BD004B546F /* SearchTableViewCell.swift */,
+				7D940241229296BD004B546F /* SearchTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		AED6F8DD228A4C9B0069C42B = {
@@ -384,6 +403,7 @@
 			children = (
 				AED6F8ED228A4C9B0069C42B /* Main.storyboard */,
 				AED6F935228A669F0069C42B /* Storyboards.swift */,
+				7D94023B22927E42004B546F /* SearchMovies.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -608,6 +628,8 @@
 				AED6F8F7228A4C9D0069C42B /* LaunchScreen.storyboard in Resources */,
 				AED6F8F4228A4C9D0069C42B /* Assets.xcassets in Resources */,
 				AED6F8EF228A4C9B0069C42B /* Main.storyboard in Resources */,
+				7D94023C22927E42004B546F /* SearchMovies.storyboard in Resources */,
+				7D940243229296BD004B546F /* SearchTableViewCell.xib in Resources */,
 				AED6F975228BEE040069C42B /* CategoriesMovieCollectionViewCell.xib in Resources */,
 				444AD09D228BE4C400771A43 /* MoviesCollectionViewCell.xib in Resources */,
 			);
@@ -797,6 +819,7 @@
 				AED6F946228A6E2F0069C42B /* UnitTestViewController.swift in Sources */,
 				44870E15228EB22400CF5A70 /* SearchUseCase.swift in Sources */,
 				44870E13228EB20C00CF5A70 /* SearchViewModel.swift in Sources */,
+				7D94023E22928BB6004B546F /* SearchAssembler.swift in Sources */,
 				444AD082228AB71800771A43 /* APIOutput.swift in Sources */,
 				AED6F96A228BE8B50069C42B /* Constant.swift in Sources */,
 				AED6F92C228A60AB0069C42B /* Assembler.swift in Sources */,
@@ -824,6 +847,7 @@
 				AED6F954228ABE790069C42B /* FavoritesAssembler.swift in Sources */,
 				444AD078228AB46500771A43 /* APIUrls.swift in Sources */,
 				AED6F980228C0B160069C42B /* CGFloat+.swift in Sources */,
+				7D940242229296BD004B546F /* SearchTableViewCell.swift in Sources */,
 				444AD07A228AB4B900771A43 /* APISevice.swift in Sources */,
 				AED6F93A228A6B6F0069C42B /* UIViewController+Rx.swift in Sources */,
 				AED6F977228BF3E30069C42B /* UIView+.swift in Sources */,
