@@ -23,7 +23,7 @@ extension API {
                 "query": searchText,
                 "page": page
             ]
-            super.init(urlString: API.Urls.moviesListURL,
+            super.init(urlString: API.Urls.searchMovies,
                        parameters: params,
                        requestType: .get,
                        requireAccessToken: false)

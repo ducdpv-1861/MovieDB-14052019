@@ -9,18 +9,18 @@
 import UIKit
 
 protocol SearchRepositoryType {
-    func getSearchList(page: Int, searchText:String) -> Observable<PagingInfo<Movie>>
+    func getSearchList(page: Int, searchText:String) -> Observable<[Movie]>
 }
 
 final class SearchRepository: SearchRepositoryType {
-    func getSearchList(page: Int, searchText:String) -> Observable<PagingInfo<Movie>> {
+    func getSearchList(page: Int, searchText:String) -> Observable<[Movie]> {
         let input = API.SearchMoviesListInput(page: page, searchText: searchText)
         return API.shared.searchMoviesList(input)
             .map { output in
                 guard let repos = output.movies else {
                     throw APIInvalidResponseError()
                 }
-                return PagingInfo<Movie>(page: page, items: repos)
+                return repos
         }
     }
 }

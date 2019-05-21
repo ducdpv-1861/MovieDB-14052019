@@ -29,12 +29,20 @@ final class MoviesViewController: UIViewController, BindableType {
     }
     
     private var options = Options()
+    private let toSearchTrigger = PublishSubject<Void>()
     var viewModel: MoviesViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         cofigView()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    @IBAction func searchButton(_ sender: Any) {
+        toSearchTrigger.onNext(())
     }
     
     private func cofigView() {
@@ -52,7 +60,8 @@ final class MoviesViewController: UIViewController, BindableType {
             loadTrigger: Driver.just(()),
             reloadTrigger: collectionView.refreshTrigger,
             loadMoreTrigger: collectionView.loadMoreTrigger,
-            selectRepoTrigger: collectionView.rx.itemSelected.asDriver()
+            selectRepoTrigger: collectionView.rx.itemSelected.asDriver(),
+            toSearchTrigger: toSearchTrigger.asDriverOnErrorJustComplete()
         )
         
         let output = viewModel.transform(input)
@@ -86,6 +95,9 @@ final class MoviesViewController: UIViewController, BindableType {
             .drive()
             .disposed(by: rx.disposeBag)
         output.isEmptyData
+            .drive()
+            .disposed(by: rx.disposeBag)
+        output.toSearch
             .drive()
             .disposed(by: rx.disposeBag)
     }
